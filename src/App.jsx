@@ -1,12 +1,15 @@
 import React from "react";
 import "./index.css"; // Import the CSS file
 
-const  SlotM = () => {
-    let x = '😄';
-    let y = '😄'; 
-    let z = '😻'; 
+const  SlotM = (props) => {
+    // let x = '😄';
+    // let y = '😄'; 
+    // let z = '😻'; 
 
-    if( (x===y) && (y===z) ){
+    let x = props.x;
+    let y = props.y;
+    let z = props.z;
+    if( ( x===y) && ( y===z ) ){
         return(
             <>
                 <div className="slot_inner">
@@ -42,9 +45,15 @@ const App = () => {
     return (
         <>
             <h1 className="heading_style"> 🎰 Welcome to <span style={{fontWeight:'bold'}}> Slot Machine Game </span> 🎰   </h1>
-            <SlotM/>
-            <SlotM/>
-            <SlotM/>
+            <div className="slotmachine">
+                <SlotM x='😇'   y='😇'  z='😇'/>
+                <SlotM x='🥭'   y='🍇'  z='🥭'/>
+                <SlotM x='🍎'   y='🍎'  z='🍏'/>
+                <SlotM x='🦁'   y='🦁'  z='🦁'/>
+                <SlotM x= '🚲'  y='🚌'  z='🚲'/> 
+
+            </div>
+            
         </>
     )
 }
